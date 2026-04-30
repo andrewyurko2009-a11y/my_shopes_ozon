@@ -1,0 +1,511 @@
+/* Контейнер, который расставит карточки в ряд */
+.main_products {
+    display: flex;
+    flex-wrap: wrap; /* Чтобы карточки переносились на следующую строку */
+    gap: 20px;       /* Расстояние между ними */
+    padding: 20px;
+    justify-content: center;
+}
+
+/* Сама карточка */
+.products {
+    width: 200px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+/* Чтобы все картинки были одного размера и не кривые */
+.products img {
+    width: 100%;
+    height: 180px;
+    object-fit: contain; /* Картинка впишется ровно */
+    display: block;
+    margin-bottom: 10px;
+}
+
+/* Название товара */
+.products p {
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+/* Цена */
+.price {
+    font-weight: bold;
+    color: #f91155;
+    font-size: 18px;
+}
+
+
+/* Общий фон страницы */
+body {
+    background-color: #f2f5f9;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    color: #005bff;
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 30px;
+}
+
+/* Сетка-контейнер */
+.main_products {
+    display: grid;
+    /* Автоматические колонки: минимум 220px, максимум — сколько влезет */
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 15px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Дизайн самой карточки */
+.products {
+    background: #ffffff;
+    border-radius: 16px; /* Красивые закругленные углы */
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.2s ease-in-out;
+    border: 1px solid transparent;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    position: relative;
+}
+
+/* Эффект при наведении */
+.products:hover {
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    transform: translateY(-4px);
+    border-color: #e0e8ff;
+}
+
+/* Картинка товара */
+.products img {
+    width: 100%;
+    height: 200px;
+    object-fit: contain; /* Картинка не обрезается и не тянется */
+    border-radius: 12px;
+    margin-bottom: 12px;
+    background-color: #fff;
+}
+
+/* Название товара */
+.products p {
+    font-size: 14px;
+    color: #2c2c2c;
+    margin: 0 0 8px 0;
+    line-height: 1.4;
+    height: 40px; /* Фиксируем высоту, чтобы цена не прыгала */
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+/* Блок цены */
+.price {
+    display: block;
+    color: #f91155; /* Фирменный розовый */
+    font-size: 20px;
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+/* Добавим кнопку "В корзину" (её нет в твоем HTML, но она добавит стиля) */
+.products::after {
+    content: "В корзину";
+    display: block;
+    background: #005bff;
+    color: white;
+    text-align: center;
+    padding: 8px 0;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 14px;
+    margin-top: auto;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.products:hover::after {
+    background: #0049cc;
+}
+
+/* Общий контейнер */
+.main_products {
+    display: flex;
+    flex-wrap: wrap; /* Чтобы карточки переносились на новый ряд */
+    gap: 25px;       /* Расстояние между карточками */
+    padding: 30px;
+    justify-content: center;
+    background-color: #f6f6f6;
+}
+
+/* Сама карточка */
+.products {
+    width: 220px;
+    background: white;
+    border-radius: 12px;
+    padding: 15px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Чтобы все картинки были ОДИНАКОВЫМИ */
+.products img {
+    width: 100%;
+    height: 160px;     /* Фиксированная высота для всех фото */
+    object-fit: cover; /* Фото заполнит блок, не растягиваясь */
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+/* Название товара */
+.products p {
+    font-size: 14px;
+    color: #333;
+    margin: 5px 0;
+    font-weight: 500;
+}
+
+/* Цена как на скрине, но ровнее */
+.price {
+    color: #f91155;
+    font-size: 18px;
+    font-weight: bold;
+    display: block;
+    margin-top: 10px;
+}
+
+/* Общий контейнер - делает сетку ровной */
+.main_products {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Расстояние между карточками */
+    padding: 40px;
+    justify-content: center; /* Центрирует всё на экране */
+    background-color: #f5f7fa; /* Светлый фон, чтобы карточки выделялись */
+}
+
+/* Сама карточка */
+.products {
+    width: 240px; /* Фиксированная ширина */
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 15px;
+    border: 1px solid #e0e0e0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Эффект при наведении */
+.products:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+/* КАРТИНКИ - теперь они все будут одного размера! */
+.products img {
+    width: 100%;
+    height: 180px; /* Жестко задаем высоту */
+    object-fit: contain; /* Картинка не обрезается и не тянется */
+    margin-bottom: 15px;
+    background: #fff;
+}
+
+/* Текст названия */
+.products p {
+    font-size: 15px;
+    color: #2c2c2c;
+    margin: 5px 0;
+    height: 40px; /* Место ровно под 2 строки текста */
+    overflow: hidden; /* Если название слишком длинное — спрячется */
+    line-height: 1.3;
+}
+
+/* Цена */
+.price {
+    display: block;
+    color: #f91155; /* Фирменный розовый */
+    font-size: 22px;
+    font-weight: 800;
+    margin-top: 10px;
+}
+
+/* Заголовок страницы */
+h1 {
+    text-align: center;
+    font-family: sans-serif;
+    color: #005bff;
+    font-size: 48px;
+    margin-top: 30px;
+}
+
+/*Панель управления*/
+
+
+/* Общие настройки */
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: #f5f7fa;
+}
+
+.nav-panel {
+    background: #fff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+
+/* 1. Верхняя панель (Город и Пункты) */
+.Top_panel {
+    background: #f2f5f9;
+    padding: 5px 40px;
+}
+
+.Top_panel ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    margin: 0;
+    padding: 0;
+}
+
+.Top_panel a {
+    text-decoration: none;
+    color: #001a34;
+    font-size: 13px;
+}
+
+/* 2. Основная панель (Лого, Каталог, Поиск) */
+.main_panel {
+    display: flex;
+    align-items: center;
+    padding: 15px 40px;
+    gap: 20px;
+}
+
+.main_panel ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    margin: 0;
+    padding: 0;
+}
+
+/* Кнопка Каталог */
+.main_panel ul:first-child a {
+    background: #005bff;
+    color: white;
+    padding: 10px 25px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.2s;
+}
+
+.main_panel ul:first-child a:hover {
+    background: #0049cc;
+}
+
+/* Поиск */
+.main_panel input {
+    width: 500px;
+    padding: 12px 20px;
+    border: 2px solid #005bff;
+    border-radius: 10px;
+    outline: none;
+    font-size: 15px;
+}
+
+.main_panel a {
+    text-decoration: none;
+    color: #001a34;
+    font-weight: 500;
+}
+
+/* 3. Нижняя панель (Категории) */
+.dif_panel {
+    padding: 10px 40px;
+    border-top: 1px solid #f2f5f9;
+}
+
+.dif_panel ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+}
+
+.dif_panel a {
+    text-decoration: none;
+    color: #001a34;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.dif_panel a:hover {
+    color: #f91155; /* Розовый при наведении на категории */
+}
+
+/* Сам эффект молнии */
+.lightning-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 150px; /* Высота области с молнией */
+    background: linear-gradient(90deg, #005bff, #00d4ff); /* Градиент от синего к голубому */
+    z-index: -1; /* Уводим на задний план, чтобы не перекрывало текст */
+
+    /* Магия молнии-лесенки через координаты */
+    clip-path: polygon(
+        0% 0%, 100% 0%,
+        100% 60%,
+        85% 40%,
+        70% 80%,
+        55% 30%,
+        40% 90%,
+        25% 50%,
+        10% 100%,
+        0% 40%
+    );
+    opacity: 0.8; /* Делаем чуть прозрачным для стиля */
+    filter: drop-shadow(0 0 15px #005bff); /* Добавляем свечение */
+}
+
+/* Чтобы контент не прилипал к молнии, добавим отступ основному контенту */
+.nav-panel {
+    background: rgba(255, 255, 255, 0.9) !important; /* Делаем шапку чуть прозрачной */
+    backdrop-filter: blur(5px); /* Эффект размытия за шапкой */
+}
+
+
+@keyframes bolt {
+    0% { opacity: 0.6; }
+    50% { opacity: 0.9; transform: scaleY(1.05); }
+    100% { opacity: 0.6; }
+}
+
+.lightning-bg {
+    animation: bolt 3s infinite ease-in-out;
+}
+
+
+/* Шапка без пробелов сверху */
+.nav-panel {
+    position: relative; /* Чтобы быть над молнией */
+    z-index: 10;
+    background: white;
+    width: 100%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Молния, которая начинается СРАЗУ под шапкой */
+.lightning-bg {
+    position: absolute;
+    top: 110px; /* Подбери это число под высоту своей навигации (примерно 110-130px) */
+    left: 0;
+    width: 100%;
+    height: 100px; /* На сколько молния заходит на карточки */
+    background: #005bff;
+    z-index: 1; /* Под навигацией, но над общим фоном */
+
+    /* Твоя лесенка-молния */
+    clip-path: polygon(
+        0% 0%, 100% 0%,
+        100% 100%,
+        80% 30%,
+        60% 80%,
+        40% 20%,
+        20% 70%,
+        0% 10%
+    );
+}
+
+/* Чтобы карточки не перекрывались молнией слишком сильно */
+.main_products {
+    margin-top: 60px; /* Даем место, чтобы молния "дышала" над товарами */
+    position: relative;
+    z-index: 5;
+}
+
+
+.promo-banner {
+    margin: 20px 40px; /* Отступы от краев экрана */
+    height: 300px;
+    background: linear-gradient(135deg, #005bff 0%, #00d4ff 100%); /* Фирменный синий градиент */
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 60px;
+    overflow: hidden; /* Чтобы картинка не вылезала за края */
+    color: white;
+    font-family: sans-serif;
+    position: relative;
+}
+
+/* Текстовая часть */
+.promo-content {
+    max-width: 500px;
+    z-index: 2;
+}
+
+.promo-tag {
+    background: #f91155; /* Розовый акцент */
+    padding: 5px 12px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.promo-content h2 {
+    font-size: 36px;
+    margin: 15px 0;
+    line-height: 1.2;
+}
+
+.promo-content p {
+    font-size: 18px;
+    opacity: 0.9;
+    margin-bottom: 25px;
+}
+
+/* Кнопка на баннере */
+.promo-btn {
+    background: white;
+    color: #005bff;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.promo-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* Картинка справа */
+.promo-image img {
+    height: 350px; /* Чуть больше высоты баннера для объема */
+    transform: rotate(-5deg); /* Слегка наклоним для "дерзости" */
+    filter: drop-shadow(0 10px 20px rgba(0,0,0,0.3));
+}
