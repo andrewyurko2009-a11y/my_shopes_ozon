@@ -509,3 +509,99 @@ body {
     transform: rotate(-5deg); /* Слегка наклоним для "дерзости" */
     filter: drop-shadow(0 10px 20px rgba(0,0,0,0.3));
 }
+
+
+
+/* --- МОБИЛЬНАЯ АДАПТАЦИЯ OZON --- */
+@media (max-width: 480px) {
+
+    /* 1. Навигация — упрощаем по максимуму */
+    .nav-panel {
+        position: static !important;
+        padding: 10px !important;
+    }
+
+    /* Прячем лишние панели, оставляем только поиск */
+    .Top_panel, .dif_panel {
+        display: none !important;
+    }
+
+    .main_panel {
+        flex-direction: column !important;
+        gap: 10px !important;
+    }
+
+    .main_panel ul {
+        display: flex !important;
+        justify-content: space-between !important;
+        width: 100% !important;
+        padding: 0 !important;
+    }
+
+    /* Поиск на всю ширину */
+    #searchInput {
+        width: 100% !important;
+        font-size: 16px !important;
+    }
+
+    /* 2. Промо-баннер */
+    .promo-banner {
+        flex-direction: column !important;
+        height: auto !important;
+        padding: 20px !important;
+        text-align: center;
+    }
+
+    .promo-image {
+        display: none; /* Скрываем картинку в баннере, чтобы сэкономить место */
+    }
+
+    .promo-content h2 {
+        font-size: 24px !important;
+    }
+
+    /* 3. СЕТКА ТОВАРОВ — делаем 2 колонки (как в оригинале) */
+    .main_products {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important; /* Ровно две колонки */
+        gap: 10px !important;
+        padding: 10px !important;
+    }
+
+    .products {
+        width: 100% !important;
+        padding: 10px !important;
+        background: #fff;
+        border-radius: 12px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .products img {
+        width: 100% !important;
+        height: 150px !important; /* Уменьшаем высоту фото под сетку */
+        object-fit: contain !important;
+    }
+
+    .products p {
+        font-size: 13px !important;
+        margin-top: 5px;
+        height: 40px; /* Чтобы названия были одной высоты */
+        overflow: hidden;
+    }
+
+    .price {
+        font-size: 16px !important;
+        font-weight: bold;
+        color: #f91155; /* Розовый цвет Ozon */
+    }
+
+    /* 4. Заголовок "Ozon" */
+    h1 {
+        text-align: center;
+        font-size: 32px !important;
+        margin: 20px 0 !important;
+    }
+}
